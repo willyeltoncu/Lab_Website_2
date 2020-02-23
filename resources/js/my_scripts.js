@@ -77,10 +77,10 @@ var index = document.getElementById("stats_table");
 var buff_wins = 0;
 var losses = 0;
 for (var i = 2; row = index.rows[i]; i++){
-		row = index.rows[i];
+		// row = index.rows[i];
 		// home = index.rows[i].col[2];
-		var home = (row.cells[2].innerHTML);
-		var away = (row.cells[3].innerHTML);
+		var home = Number(row.cells[2].innerHTML);
+		var away = Number(row.cells[3].innerHTML);
 		 console.log((row.cells[2]).innerHTML);
 		 console.log((row.cells[3]).innerHTML);
 			if((home) > (away)) {
