@@ -120,6 +120,12 @@ console.log(losses);
 					After setting all of the anchor tags, update the innerHTML of the dropdown menu.
 					As a note, the id for the dropdown menu is player_selector.
 
+*/
+function loadPlayersPage(){
+	// var dd = document.getElementById("player_selector");
+	switchPlayers(0);
+}
+/*
 		switchPlayers(playerNum) method:
 			parameters:
 				playerNum - The index of the football player in the players array.
@@ -142,3 +148,35 @@ console.log(losses);
 					  avg_r_yards   - the average number of rushing yards for the player's Buff career
 					  avg_rec_yards - the average number of receiving yards for the player's Buff career
 */
+function switchPlayers(playerNum){
+	document.getElementById("player_img").src = players[playerNum].img;
+	document.getElementById("player_img").alt =players[playerNum].img ;
+
+	var year = document.getElementById("p_year");
+	year.innerHTML = players[playerNum].year;
+
+	var major = document.getElementById("p_major");
+	major.innerHTML = players[playerNum].major;
+
+	var gp = document.getElementById("g_played");
+	gp.innerHTML = players[playerNum].games_played;
+
+	var py = document.getElementById("p_yards");
+	py.innerHTML = players[playerNum].pass_yards;
+
+	var ry = document.getElementById("r_yards");
+	ry.innerHTML = players[playerNum].rushing_yards;
+
+	var recy = document.getElementById("rec_yards");
+	recy.innerHTML = players[playerNum].receiving_yards;
+
+	var apy = document.getElementById("avg_p_yards");
+	apy.innerHTML = Number(players[playerNum].pass_yards /players[playerNum].games_played);
+
+	var ary = document.getElementById("avg_r_yards");
+	ary.innerHTML = Number(players[playerNum].rushing_yards/players[playerNum].games_played);
+
+	var arec = document.getElementById("avg_rec_yards");
+	arec.innerHTML = Number(players[playerNum].receiving_yards/ players[playerNum].games_played);
+
+}
