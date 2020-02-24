@@ -122,8 +122,14 @@ console.log(losses);
 
 */
 function loadPlayersPage(){
-	// var dd = document.getElementById("player_selector");
-	switchPlayers(0);
+	var dd = document.getElementById("player_selector");
+	var tag = "";
+	for(var i = 0; i < players.length; i++){
+		tag = tag + "<a class = 'dropdown-item' style = 'display:block'; 'href' = '#' onclick ='switchPlayers("+i+")'>" + players[i].name + "</a>\n";
+
+
+	}
+	dd.innerHTML = tag;
 }
 /*
 		switchPlayers(playerNum) method:
